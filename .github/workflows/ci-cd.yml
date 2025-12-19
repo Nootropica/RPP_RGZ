@@ -23,29 +23,3 @@ jobs:
     
     - name: Run bandit
       run: bandit -r .
-
-name: Run Tests and Security Check
-
-on: [push, pull_request]
-
-jobs:
-  check:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-    
-    - name: Install packages
-      run: |
-        pip install flask pytest bandit
-    
-    - name: Run tests
-      run: pytest test_app.py
-    
-    - name: Run bandit
-      run: bandit -r .
