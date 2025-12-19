@@ -33,7 +33,8 @@ def analyze():
     
     return jsonify({
         'total_words': total_words,
-        'top_words': top_words_formatted
+        'top_words': top_words_formatted,
+        'processed_by': f"instance_{port}"
     })
 
 @app.route('/health', methods=['GET'])
