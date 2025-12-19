@@ -50,4 +50,4 @@ if __name__ == '__main__':
             pass
     
     print(f"Запуск Flask приложения на порте {port}")
-    app.run(debug=True, port=port)
+    app.run(debug=False, port=port)
